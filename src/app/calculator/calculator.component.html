@@ -1,0 +1,18 @@
+<div class="ui container">
+  <div class="ui segment">
+    <h2 class="ui header">Math Addition Game</h2>
+    <form [formGroup]="gameForm" (ngSubmit)="checkAnswer()" class="ui form">
+      <div class="ui field">
+        <label>{{ currentQuestion }}</label>
+        <input sui-input type="number" formControlName="answer" (keyup.enter)="checkAnswer()" />
+        <div class=""></div>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="ui segment">
+    <h3 class="ui header">Score</h3>
+    <p>Correct Attempts: {{ correctCount }}</p>
+    <p>Incorrect Attempts: {{ incorrectCount }}</p>
+  </div>
+</div>
