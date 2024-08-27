@@ -4,7 +4,7 @@
     <form [formGroup]="gameForm" (ngSubmit)="checkAnswer()" class="ui form">
       <div class="ui field">
         <label>{{ currentQuestion }}</label>
-        <input sui-input type="number" formControlName="answer"/>
+        <input sui-input type="number" formControlName="answer" (keydown.enter)="checkAnswer()"/>
       </div>
       <button class="ui primary button" type="submit" [disabled]="gameForm.untouched">Submit</button>
     </form>
