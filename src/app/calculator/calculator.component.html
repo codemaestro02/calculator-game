@@ -4,15 +4,28 @@
     <form [formGroup]="gameForm" (ngSubmit)="checkAnswer()" class="ui form">
       <div class="ui field">
         <label>{{ currentQuestion }}</label>
-        <input sui-input type="number" formControlName="answer" (keyup.enter)="checkAnswer()" />
-        <div class=""></div>
+        <input sui-input type="number" formControlName="answer"/>
       </div>
-      <button class="ui button" type="submit">Submit</button>
+      <button class="ui primary button" type="submit" [disabled]="gameForm.untouched">Submit</button>
     </form>
   </div>
-  <div class="ui segment">
-    <h3 class="ui header">Score</h3>
-    <p>Correct Attempts: {{ correctCount }}</p>
-    <p>Incorrect Attempts: {{ incorrectCount }}</p>
+  <div class="ui cards">
+    <div class="card">
+      <div class="content">
+        <div class="header">Correct Attempts:</div>
+        <div class="description">
+          {{ correctCount }}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <div class="header">Incorrect Attempts:</div>
+        <div class="description">
+          {{ incorrectCount }}
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
